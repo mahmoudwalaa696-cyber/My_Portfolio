@@ -31,9 +31,9 @@ const Footer = () => {
           </div>
         </div>
         <div className="border-t border-gray-600 pt-4 flex flex-col md:flex-row justfiy-btween items-center">
-          <p className="text-gray-400">&copy: {new Date().getFullYear()}</p>
+          <p className="text-gray-400 ">&copy: {new Date().getFullYear()}</p>
 
-          <div className="flex space-x-4 my-4 md:my-0">
+          <div className="flex space-x-4 my-4 md:my-0 px-5">
             <a href="#" className="text-gray-400 hover:text-white">
               <FaFacebook />
             </a>
