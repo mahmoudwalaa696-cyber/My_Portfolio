@@ -34,7 +34,7 @@ const App = () => {
 
   return (
   
-      <div  className={`max-h-screen overflow-x-hidden transition-colors duration-300 
+      <div  className={`min-h-screen overflow-x-hidden transition-colors duration-300 
         ${Theme_Select === "dark" ? " dark:bg-gray-900 dark:text-white" : "bg-white text-black"}`}>
         <NavBar/>
         <Hero />
