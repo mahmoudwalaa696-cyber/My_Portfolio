@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+     darkMode: "class",
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -7,7 +8,11 @@ export default {
   theme: {
 screens: { sm: "500px", md: "768px", lg: "1024px", xl: "1280px", xxl: "1536px", },
 
-    extend: {},
+    extend: {
+       fontFamily: {
+        myFont: ["Poppins", "sans-serif"], // أو أي خط من اختيارك
+      },
+    },
   },
   plugins: [],
 }

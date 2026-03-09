@@ -1,61 +1,45 @@
-import { Heroimg } from "../assets";
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import Typed from "typed.js";
+import { Heroimg } from "../assets";
+import { useSelector } from "react-redux";
+
+
 const Hero = () => {
+   const Theme_Select =useSelector((state)=> state.ThemeReducer.mode)
   const typedRef = useRef(null);
 
   useEffect(() => {
     const typed = new Typed(typedRef.current, {
-      strings: [
-        '<span class="text-white">Hi <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500">I’m Walaa, </span>A Front-end Developer </span>',
+        strings: [
+        // هنا نحط النص بدون class للون
+        `Hi <span class="text-gradient">I’m Walaa Mahmoud, </span>A Front-end Developer`,
       ],
-      typeSpeed: 70, 
-      backSpeed: 20, 
-      backDelay: 1000, 
-      loop: true, 
+      typeSpeed: 70,
+      backSpeed: 20,
+      backDelay: 1000,
+      loop: true,
     });
+    
 
-    return () => {
-      typed.destroy();
-    };
-  }, []);
+    return () => typed.destroy();
+  }, [Theme_Select]);
 
   return (
-  <div className="bg-black">
-      <div className="container mx-auto text-white text-center py-16" id="hero">
-      <img
-        src={Heroimg}
-        alt=""
-        className="mx-auto mb-8 w-48 h-48 rounded-full object-cover transform
-    transition-transform duration-300 hover:scale-105"
-      />
-      <h1 className=" text-4xl font-bold">
-        <span ref={typedRef}></span>
-      </h1>
-      <p className="mt-4 text-lg text-gray-300">
-        “I create modern, responsive web applications using <br /> HTML, CSS,
-        JavaScript, Tailwind, and React.”
-      </p>
-
-      <div className="mt-8 space-x-4">
-        <button
-          data-aos="fade-right"
-          data-aos-duration="3000"
-          className="bg-gradient-to-r from-green-400 to-blue-500 text-white 
- transform transition-transform duration-300 hover:scale-105 px-4 py-2 rounded-full"
-        >
-          Contact With Me
-        </button>
-        <button
-          data-aos="fade-left"
-          data-aos-duration="3000"
-          className="bg-gradient-to-r from-pink-500 to-yellow-500 text-white  transform transition-transform duration-300 hover:scale-105 px-4 py-2 rounded-full"
-        >
-          Resume
-        </button>
+    <div className={`transition-colors duration-500 bg-white dark:bg-gray-900`}>
+      <div className="container mx-auto text-center py-16">
+        <img
+          src={Heroimg}
+          alt="Hero"
+          className="mx-auto mb-8 w-48 h-48 rounded-full object-cover transform transition-transform duration-300 hover:scale-105"
+        />
+        <h1 className="text-4xl font-bold mb-4">
+          <span ref={typedRef}></span>
+        </h1>
+        <p className={`mt-4 text-lg text-gray-800 dark:text-gray-300 `}>
+          “I create modern, responsive web applications using <br /> HTML, CSS, JavaScript, Tailwind, and React.”
+        </p>
       </div>
     </div>
-  </div>
   );
 };
 

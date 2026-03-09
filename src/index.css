@@ -1,20 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 body {
-  overflow-x: hidden;
-}
-html {
-  scroll-behavior: smooth;
-overflow-x: hidden;
-max-width: 100%;
+   overflow-x: hidden;
 }
 
 .swiper {
   width: 320px;
   height: 400px;
 }
-
 
 
 

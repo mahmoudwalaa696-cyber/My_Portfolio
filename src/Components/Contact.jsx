@@ -1,25 +1,28 @@
-import { FaEnvelope } from "react-icons/fa";
-import { FaPhone } from "react-icons/fa";
-import { FaMapMarkerAlt } from "react-icons/fa";
+import { useSelector } from "react-redux";
+import { FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
 
 const Contact = () => {
+  const Theme_Select = useSelector((state) => state.ThemeReducer.mode);
+
   return (
-    <div className="bg-black text-white py-20" id="contact">
+    <div
+      id="contact"
+      className="py-20 transition-colors duration-500 bg-white text-black dark:bg-gray-900 dark:text-white"
+    >
       <div className="container mx-auto px-8 md:px-16 lg:px-24">
-        <h1 className="text-4xl font-bold text-center mb-12">Contact Me</h1>
+        <h1 className="text-4xl font-bold text-center">Contact Me</h1>
+        <div className="mt-5 mb-12 w-[100px] h-1 bg-gradient-to-r from-green-400 to-blue-500 rounded-xl mx-auto"></div>
+
         <div className="flex flex-col md:flex-row items-center md:gap-12">
-          <div
-            data-aos="fade-right"
-            data-aos-duration="3000"
-            className="flex-1"
-          >
+          {/* Contact Info */}
+          <div data-aos="fade-right" data-aos-duration="3000" className="flex-1">
             <h3 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500 mb-4">
               Let's Talk
             </h3>
-            <p>
-              I'm open to discussing web development projecys or partnership
-              opportunities.
+            <p className="text-gray-800 dark:text-gray-300">
+              I'm open to discussing web development projects or partnership opportunities.
             </p>
+
             <div className="mb-4 mt-8">
               <FaEnvelope className="inline-block text-green-400 mr-2" />
               <a href="#" className="hover:underline">
@@ -27,54 +30,39 @@ const Contact = () => {
               </a>
             </div>
 
-            <div className="mb-4 ">
+            <div className="mb-4">
               <FaPhone className="inline-block text-green-400 mr-2" />
               <span>01012345689</span>
             </div>
 
-            <div className="mb-4 ">
+            <div className="mb-4">
               <FaMapMarkerAlt className="inline-block text-green-400 mr-2" />
-              <span>sreet, city, pronice, country</span>
+              <span>street, city, province, country</span>
             </div>
           </div>
 
-          <div
-            data-aos="fade-left"
-            data-aos-duration="3000"
-            className="flex-1 w-full mt-5 md:mt-0"
-          >
+          {/* Contact Form */}
+          <div className="flex-1 w-full mt-5 md:mt-0">
             <form className="space-y-4">
-              <div>
-                <label htmlFor="name" className="block mb-2">
-                  Your Name
-                </label>
-                <input
-                  type="text"
-                  placeholder="Enter You Name"
-                  className="w-full p-2 rounded bg-gray-800 border border-gray-600 focus:outline-none focus:border-green-400"
-                />
-              </div>
+              {[{ label: "Your Name", placeholder: "Enter Your Name" }, { label: "Email", placeholder: "Enter Your Email" }].map(
+                (field, index) => (
+                  <div key={index}>
+                    <label className="block mb-2">{field.label}</label>
+                    <input
+                      type="text"
+                      placeholder={field.placeholder}
+                      className="w-full p-2 rounded border bg-gray-100 border-gray-300 text-black focus:outline-none focus:border-green-400 transition-colors duration-300 dark:bg-gray-800 dark:border-gray-600 dark:text-white"
+                    />
+                  </div>
+                )
+              )}
 
               <div>
-                <label htmlFor="emial" className="block mb-2">
-                  Email
-                </label>
-                <input
-                  type="text"
-                  placeholder="Enter You Email"
-                  className="w-full p-2 rounded bg-gray-800 border border-gray-600 focus:outline-none focus:border-green-400"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block mb-2">
-                  Email
-                </label>
+                <label className="block mb-2">Message</label>
                 <textarea
-                  type="text"
                   rows="5"
-                  placeholder="Enter You message"
-                  className="w-full p-2 rounded bg-gray-800 border border-gray-600 focus:outline-none focus:border-green-400"
+                  placeholder="Enter Your Message"
+                  className="w-full p-2 rounded border bg-gray-100 border-gray-300 text-black focus:outline-none focus:border-green-400 transition-colors duration-300 dark:bg-gray-800 dark:border-gray-600 dark:text-white"
                 />
               </div>
 
