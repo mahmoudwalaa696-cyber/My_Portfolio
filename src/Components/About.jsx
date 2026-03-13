@@ -12,8 +12,8 @@ const About = () => {
       <div className="container mx-auto px-8 md:px-16 lg:px-24">
         <h1 className="text-4xl font-bold text-center">About Me</h1>
 
-        <div className="mt-5 mb-12 w-[100px] h-1 bg-gradient-to-r from-green-400 to-blue-500 rounded-xl mx-auto"></div>
-
+       
+ <div className="mt-5 mb-12 w-[100px] h-1 bg-gradient-to-r from-green-400 to-blue-500 rounded-xl mx-auto"></div>
         <div className="flex flex-col md:flex-row items-center md:space-x-12">
           <img
             src={Heroimg}

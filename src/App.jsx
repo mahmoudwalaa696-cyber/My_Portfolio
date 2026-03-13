@@ -12,6 +12,7 @@ import Projects from "./Components/projects";
 import Testimonials from "./Components/testimonials";
 import Skills from "./Components/Skills";
 import { useSelector } from "react-redux";
+import ScrollToTopButton from "./Components/ScrollToTopButton";
 
 const App = () => {
   // Aos Animation
@@ -34,7 +35,7 @@ const App = () => {
 
   return (
   
-      <div  className={`min-h-screen overflow-x-hidden transition-colors duration-300 
+      <div  className={` overflow-x-hidden transition-colors duration-300 
         ${Theme_Select === "dark" ? " dark:bg-gray-900 dark:text-white" : "bg-white text-black"}`}>
         <NavBar/>
         <Hero />
@@ -45,6 +46,7 @@ const App = () => {
         <Testimonials />
         <Contact />
         <Footer />
+         <ScrollToTopButton/>
       </div>
 
   );

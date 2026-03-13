@@ -6,14 +6,15 @@ body {
    overflow-x: hidden;
    margin: 0;
    padding: 0;
-   overflow-y: 0;
 }
 
+body{
+  @apply dark:bg-gray-900;
+}
 .swiper {
   width: 320px;
   height: 400px;
 }
-
 
 
 

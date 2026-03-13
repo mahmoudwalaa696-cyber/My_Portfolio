@@ -12,7 +12,7 @@ const Hero = () => {
     const typed = new Typed(typedRef.current, {
         strings: [
         // هنا نحط النص بدون class للون
-        `Hi <span class="text-gradient">I’m Walaa Mahmoud, </span>A Front-end Developer`,
+        `Hi <span style="background: linear-gradient(to right, #22c55e, #3b82f6); -webkit-background-clip: text; color: transparent;">I’m Walaa Mahmoud, </span>A Front-end Developer`,
       ],
       typeSpeed: 70,
       backSpeed: 20,
